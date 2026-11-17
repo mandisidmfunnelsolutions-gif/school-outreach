@@ -903,14 +903,17 @@
 
   function renderInspector() {
     const lead = appState.filteredLeads.find((l) => l.id === appState.activeLeadId);
+    const railEl = $("contextRail");
     if (!lead) {
       $("inspectorEmpty").classList.remove("hidden");
       $("inspectorLoaded").classList.add("hidden");
+      if (railEl) railEl.classList.add("hidden");
       return;
     }
 
     $("inspectorEmpty").classList.add("hidden");
     $("inspectorLoaded").classList.remove("hidden");
+    if (railEl) railEl.classList.remove("hidden");
 
     const st = getLeadState(lead.id);
     const idx = appState.filteredLeads.findIndex((l) => l.id === lead.id);
@@ -1113,6 +1116,20 @@
       span.textContent = sk;
       skillsCloud.appendChild(span);
     });
+
+    if ($("railLensTier")) $("railLensTier").textContent = lead.decision_tier;
+    if ($("railLensSummary")) $("railLensSummary").textContent = cv.lens.scanFocus;
+    const railSkillsCloud = $("railSkillsCloud");
+    if (railSkillsCloud) {
+      railSkillsCloud.innerHTML = "";
+      const railSkills = lead.skills && lead.skills.length ? lead.skills.slice(0, 6) : (lead.school_signals || []).slice(0, 4);
+      railSkills.forEach((sk) => {
+        const span = document.createElement("span");
+        span.className = "tag-item";
+        span.textContent = sk;
+        railSkillsCloud.appendChild(span);
+      });
+    }
 
     $("cvInstType").textContent = lead.institution_type;
     const sigCloud = $("cvSchoolSignals");
@@ -1388,9 +1405,44 @@
       .replace(/"/g, "&quot;");
   }
 
+  function syncQuickFilterChips() {
+    let activeKey = "";
+    if (
+      appState.hiringFilter === "all" &&
+      appState.status === "all" &&
+      appState.province === "all" &&
+      appState.tier === "all" &&
+      appState.institution === "all"
+    ) {
+      activeKey = "all";
+    } else if (appState.hiringFilter === "hot" && appState.status === "all") {
+      activeKey = "hot";
+    } else if (appState.hiringFilter === "open_roles" && appState.status === "all") {
+      activeKey = "open_roles";
+    } else if (appState.status === "starred" && appState.hiringFilter === "all") {
+      activeKey = "starred";
+    } else if (appState.status === "ready" && appState.hiringFilter === "all") {
+      activeKey = "ready";
+    }
+    document.querySelectorAll(".qchip").forEach((chip) => {
+      chip.classList.toggle("active", chip.dataset.qfilter === activeKey);
+    });
+    const toggleBtn = $("btnToggleFilters");
+    if (toggleBtn) {
+      const hasAdv =
+        appState.province !== "all" ||
+        appState.tier !== "all" ||
+        appState.institution !== "all" ||
+        appState.status !== "all" ||
+        appState.hiringFilter !== "all";
+      toggleBtn.classList.toggle("btn-primary", hasAdv);
+    }
+  }
+
   function renderAll() {
     populateFilterOptions();
     applyFilters();
+    syncQuickFilterChips();
     updateStats();
     renderQueue();
     renderInspector();
@@ -1409,6 +1461,45 @@
         btn.setAttribute("aria-selected", "true");
         appState.segment = btn.dataset.segment;
         renderAll();
+      });
+    });
+
+    // Collapsible Advanced Filters Drawer
+    const toggleFiltersBtn = $("btnToggleFilters");
+    const moreFiltersPanel = $("moreFiltersPanel");
+    if (toggleFiltersBtn && moreFiltersPanel) {
+      toggleFiltersBtn.addEventListener("click", () => {
+        const willShow = moreFiltersPanel.classList.contains("hidden");
+        moreFiltersPanel.classList.toggle("hidden", !willShow);
+        toggleFiltersBtn.setAttribute("aria-expanded", String(willShow));
+      });
+    }
+
+    // Quick Filter Chips
+    document.querySelectorAll(".qchip").forEach((chip) => {
+      chip.addEventListener("click", () => {
+        const key = chip.dataset.qfilter;
+        appState.hiringFilter = "all";
+        appState.status = "all";
+        if (key === "all") {
+          appState.province = "all";
+          appState.tier = "all";
+          appState.institution = "all";
+          $("filterProvince").value = "all";
+          $("filterTier").value = "all";
+          $("filterInstitution").value = "all";
+        } else if (key === "hot" || key === "open_roles") {
+          appState.hiringFilter = key;
+        } else if (key === "starred" || key === "ready") {
+          appState.status = key;
+        }
+        $("filterHiring").value = appState.hiringFilter;
+        $("filterStatus").value = appState.status;
+        applyFilters();
+        syncQuickFilterChips();
+        updateStats();
+        renderQueue();
+        renderInspector();
       });
     });
 
@@ -1435,6 +1526,7 @@
     $("filterProvince").addEventListener("change", (e) => {
       appState.province = e.target.value;
       applyFilters();
+      syncQuickFilterChips();
       updateStats();
       renderQueue();
       renderInspector();
@@ -1443,6 +1535,7 @@
     $("filterTier").addEventListener("change", (e) => {
       appState.tier = e.target.value;
       applyFilters();
+      syncQuickFilterChips();
       updateStats();
       renderQueue();
       renderInspector();
@@ -1451,6 +1544,7 @@
     $("filterInstitution").addEventListener("change", (e) => {
       appState.institution = e.target.value;
       applyFilters();
+      syncQuickFilterChips();
       updateStats();
       renderQueue();
       renderInspector();
@@ -1459,6 +1553,7 @@
     $("filterStatus").addEventListener("change", (e) => {
       appState.status = e.target.value;
       applyFilters();
+      syncQuickFilterChips();
       updateStats();
       renderQueue();
       renderInspector();
@@ -1467,6 +1562,7 @@
     $("filterHiring").addEventListener("change", (e) => {
       appState.hiringFilter = e.target.value;
       applyFilters();
+      syncQuickFilterChips();
       updateStats();
       renderQueue();
       renderInspector();
@@ -1493,6 +1589,7 @@
       appState.institution = "all";
       appState.status = "all";
       appState.hiringFilter = "all";
+      $("filterStatus").value = "all";
       $("filterHiring").value = "all";
       renderAll();
     });
@@ -1659,16 +1756,44 @@
       $("workspaceGrid").classList.remove("mobile-detail-open");
     });
 
-    // Keyboard navigation when not typing in inputs
+    // Keyboard shortcuts & Escape handling
     document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        if ($("profileDrawer") && !$("profileDrawer").classList.contains("hidden")) {
+          $("profileDrawer").classList.add("hidden");
+          return;
+        }
+        if ($("csvImportDrawer") && !$("csvImportDrawer").classList.contains("hidden")) {
+          $("csvImportDrawer").classList.add("hidden");
+          return;
+        }
+        if ($("moreFiltersPanel") && !$("moreFiltersPanel").classList.contains("hidden")) {
+          $("moreFiltersPanel").classList.add("hidden");
+          if ($("btnToggleFilters")) $("btnToggleFilters").setAttribute("aria-expanded", "false");
+          return;
+        }
+      }
+
       const tag = (document.activeElement && document.activeElement.tagName) || "";
       if (["INPUT", "TEXTAREA", "SELECT"].includes(tag)) return;
-      if (e.key === "ArrowDown") {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+
+      if (e.key === "/") {
+        e.preventDefault();
+        $("searchInput").focus();
+        $("searchInput").select();
+      } else if (e.key === "ArrowDown" || e.key === "j") {
         e.preventDefault();
         stepLead(1);
-      } else if (e.key === "ArrowUp") {
+      } else if (e.key === "ArrowUp" || e.key === "k") {
         e.preventDefault();
         stepLead(-1);
+      } else if (e.key === "1") {
+        $("tabBtnDispatch").click();
+      } else if (e.key === "2") {
+        $("tabBtnLinkedin").click();
+      } else if (e.key === "3") {
+        $("tabBtnCv").click();
       }
     });
 

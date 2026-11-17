@@ -8,99 +8,112 @@
 </head>
 <body>
   <div class="app-shell">
-    <!-- Top Workspace Header -->
+    <!-- Slim Top Workspace Bar -->
     <header class="topbar">
-      <div class="topbar-row">
-        <div>
-          <h1 class="brand-title">School Decision-Maker Outreach Dispatch</h1>
-          <p class="brand-subtitle">
-            POPIA-safe verified institutional contacts for Siphosihle Mashinini — with context-aware CV compiler guidance.
-          </p>
+      <div class="topbar-left">
+        <div class="brand-mark">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <h1 class="brand-title">Outreach Dispatch</h1>
         </div>
 
-        <div class="topbar-actions">
-          <button type="button" id="btnOpenProfile" class="btn btn-primary">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <span id="profileBtnLabel">Candidate &amp; CV Profile</span>
+        <select id="listSelector" class="select" aria-label="Active lead list">
+          <option value="builtin">Built-in POPIA List</option>
+        </select>
+
+        <div class="segment-tabs" role="tablist" aria-label="Lead segments">
+          <button type="button" class="segment-btn active" data-segment="schools_all" role="tab" aria-selected="true">
+            <span>Schools</span>
+            <span class="count-pill tabular" id="segCountSchools">45</span>
           </button>
-          <button type="button" id="btnOpenImportCsv" class="btn">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            <span>Import CSV</span>
+          <button type="button" class="segment-btn" data-segment="edtech" role="tab" aria-selected="false">
+            <span>EdTech</span>
+            <span class="count-pill tabular" id="segCountEdtech">24</span>
           </button>
-          <button type="button" id="btnExportCsv" class="btn">
-            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span>Export CSV</span>
+          <button type="button" class="segment-btn" data-segment="all" role="tab" aria-selected="false">
+            <span>All POPIA</span>
+            <span class="count-pill tabular" id="segCountAll">69</span>
           </button>
-          <button type="button" id="btnThemeToggle" class="btn" title="Toggle daylight or dark theme" aria-label="Toggle theme">
-            <svg id="themeIconSun" class="icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-            <svg id="themeIconMoon" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          </button>
-          <button type="button" id="btnResetAll" class="btn btn-ghost btn-danger">Reset</button>
         </div>
       </div>
 
-      <div class="topbar-meta-row">
-        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px; max-width:100%;">
-          <select id="listSelector" class="select" style="width:auto; min-width:210px; height:34px; font-weight:600;" aria-label="Active lead list">
-            <option value="builtin">Built-in POPIA School &amp; EdTech List</option>
-          </select>
-          <div class="segment-tabs" role="tablist" aria-label="Lead segments">
-            <button type="button" class="segment-btn active" data-segment="schools_all" role="tab" aria-selected="true">
-              <span>School Decision Makers</span>
-              <span class="count-pill tabular" id="segCountSchools">45</span>
-            </button>
-            <button type="button" class="segment-btn" data-segment="edtech" role="tab" aria-selected="false">
-              <span>EdTech &amp; Training Orgs</span>
-              <span class="count-pill tabular" id="segCountEdtech">24</span>
-            </button>
-            <button type="button" class="segment-btn" data-segment="all" role="tab" aria-selected="false">
-              <span>All POPI-Safe Leads</span>
-              <span class="count-pill tabular" id="segCountAll">69</span>
-            </button>
+      <div class="topbar-right">
+        <div class="stat-strip tabular" aria-label="Pipeline progress">
+          <div class="stat-item" title="Leads matching active filters">
+            <span class="stat-val" id="statVisible">45</span>
+            <span>View</span>
+          </div>
+          <div class="stat-item" title="Leads with CV tailored">
+            <span class="stat-val" id="statCvReady">0</span>
+            <span>CV</span>
+          </div>
+          <div class="stat-item" title="Leads contacted">
+            <span class="stat-val" id="statSent">0</span>
+            <span>Sent</span>
+          </div>
+          <div class="stat-item" title="Replies or interviews">
+            <span class="stat-val" id="statReplies">0</span>
+            <span>Replies</span>
           </div>
         </div>
 
-        <div class="stat-strip tabular" aria-label="Pipeline progress">
-          <div class="stat-item">
-            <span class="stat-val" id="statVisible">52</span>
-            <span>In View</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-val" id="statCvReady">0</span>
-            <span>CV Tailored</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-val" id="statSent">0</span>
-            <span>Dispatched</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-val" id="statReplies">0</span>
-            <span>Replies / Interviews</span>
-          </div>
+        <span class="topbar-divider" aria-hidden="true"></span>
+
+        <div class="topbar-actions">
+          <button type="button" id="btnOpenProfile" class="btn btn-sm btn-primary">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <span id="profileBtnLabel">CV Profile</span>
+          </button>
+          <button type="button" id="btnOpenImportCsv" class="btn btn-sm">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <span>Import</span>
+          </button>
+          <button type="button" id="btnExportCsv" class="btn btn-sm">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Export</span>
+          </button>
+          <button type="button" id="btnThemeToggle" class="btn btn-sm" title="Toggle daylight or dark theme" aria-label="Toggle theme">
+            <svg id="themeIconSun" class="icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg id="themeIconMoon" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <button type="button" id="btnResetAll" class="btn btn-sm btn-ghost btn-danger">Reset</button>
         </div>
       </div>
     </header>
 
-    <!-- Main Master-Detail Workspace -->
+    <!-- Main 3-Pane SaaS CRM Workspace -->
     <main id="workspaceGrid" class="workspace">
-      <!-- Left Queue -->
+      <!-- PANE 1: Left Lead Queue -->
       <aside class="queue-panel" aria-label="Lead queue">
         <div class="queue-controls">
-          <div class="search-wrap">
-            <svg class="icon search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input
-              id="searchInput"
-              type="text"
-              class="input search-input"
-              placeholder="Search name, school, title, city, IEB, CAPS..."
-              autocomplete="off"
-            />
-            <button type="button" id="btnClearSearch" class="clear-search hidden" aria-label="Clear search">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <div class="search-row">
+            <div class="search-wrap">
+              <svg class="icon search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input
+                id="searchInput"
+                type="text"
+                class="input search-input"
+                placeholder="Search school, name, city... ( / )"
+                autocomplete="off"
+              />
+              <button type="button" id="btnClearSearch" class="clear-search hidden" aria-label="Clear search">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </button>
+            </div>
+            <button type="button" id="btnToggleFilters" class="btn btn-sm" aria-expanded="false" aria-controls="moreFiltersPanel" title="Toggle detailed filters">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+              <span>Filters</span>
             </button>
           </div>
 
-          <div class="filter-grid">
+          <div class="quick-chips" role="group" aria-label="Quick filters">
+            <button type="button" class="qchip active" data-qfilter="all">All</button>
+            <button type="button" class="qchip" data-qfilter="hot">Hot Hiring</button>
+            <button type="button" class="qchip" data-qfilter="open_roles">Open Roles</button>
+            <button type="button" class="qchip" data-qfilter="starred">Starred</button>
+            <button type="button" class="qchip" data-qfilter="ready">Not Sent</button>
+          </div>
+
+          <div id="moreFiltersPanel" class="filter-grid hidden">
             <select id="filterProvince" class="select" aria-label="Filter by province">
               <option value="all">All Provinces</option>
             </select>
@@ -136,14 +149,14 @@
         </div>
 
         <div class="queue-summary tabular">
-          <span id="queueCountLabel">Showing 52 leads</span>
-          <span id="queueHint">Click a lead or use ↑ / ↓</span>
+          <span id="queueCountLabel">Showing 45 leads</span>
+          <span id="queueHint">j / k step • / search</span>
         </div>
 
         <div id="queueList" class="queue-list" role="listbox" aria-label="Decision makers"></div>
       </aside>
 
-      <!-- Right Inspector -->
+      <!-- PANE 2: Center Action Stage -->
       <section class="inspector-panel" aria-label="Selected decision maker workspace">
         <div id="inspectorEmpty" class="tab-content hidden">
           <p class="cv-copy">No matching leads for the current filter combination. Clear filters to resume dispatching.</p>
@@ -152,7 +165,7 @@
           </div>
         </div>
 
-        <div id="inspectorLoaded">
+        <div id="inspectorLoaded" class="inspector-loaded">
           <div class="inspector-header">
             <div class="inspector-top">
               <div class="inspector-person">
@@ -178,8 +191,8 @@
                   <svg id="starIcon" class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
                   <span id="starLabel">Priority</span>
                 </button>
-                <button type="button" id="btnPrevLead" class="btn btn-sm" title="Previous lead (Up arrow)">Prev</button>
-                <button type="button" id="btnNextLead" class="btn btn-sm" title="Next lead (Down arrow)">Next</button>
+                <button type="button" id="btnPrevLead" class="btn btn-sm" title="Previous lead (k or Up)">Prev</button>
+                <button type="button" id="btnNextLead" class="btn btn-sm" title="Next lead (j or Down)">Next</button>
               </div>
             </div>
 
@@ -192,7 +205,7 @@
               </div>
               <a id="detailLinkedinLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                <span>LinkedIn Profile</span>
+                <span>LinkedIn</span>
               </a>
               <a id="detailWebsiteLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
@@ -200,7 +213,7 @@
               </a>
               <a id="detailCareersLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-sm hidden">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                <span>Careers Page</span>
+                <span>Careers</span>
               </a>
               <div id="detailRecEmailChip" class="contact-chip hidden">
                 <span>HR:</span>
@@ -219,299 +232,317 @@
                 <button type="button" class="status-pill" data-status="interview">Interview</button>
                 <button type="button" class="status-pill" data-status="archived">Archived</button>
               </div>
-              <span class="badge badge-success">POPIA-Safe Institutional Emails Only</span>
-          <span class="badge badge-info tabular" id="detailFitPill">Set CV in Profile for Match %</span>
+              <div style="display:flex; flex-wrap:wrap; align-items:center; gap:6px;">
+                <span class="badge badge-success">POPIA Verified</span>
+                <span class="badge badge-info tabular" id="detailFitPill">Set CV for Match %</span>
+              </div>
             </div>
           </div>
 
           <!-- Workspace Tabs -->
           <div class="workspace-tabs" role="tablist">
             <div class="tab-group">
-              <button type="button" class="tab-btn active" id="tabBtnDispatch" data-tab="dispatch" role="tab" aria-selected="true">
+              <button type="button" class="tab-btn active" id="tabBtnDispatch" data-tab="dispatch" role="tab" aria-selected="true" title="Shortcut: 1">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                 <span>Outreach Dispatch</span>
               </button>
-              <button type="button" class="tab-btn" id="tabBtnLinkedin" data-tab="linkedin" role="tab" aria-selected="false">
+              <button type="button" class="tab-btn" id="tabBtnLinkedin" data-tab="linkedin" role="tab" aria-selected="false" title="Shortcut: 2">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                 <span>LinkedIn Workspace</span>
               </button>
-              <button type="button" class="tab-btn" id="tabBtnCv" data-tab="cv" role="tab" aria-selected="false">
+              <button type="button" class="tab-btn" id="tabBtnCv" data-tab="cv" role="tab" aria-selected="false" title="Shortcut: 3">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-                <span>CV Compiler Tips</span>
+                <span>CV Compiler</span>
               </button>
             </div>
-            <span class="field-label tabular" id="detailPositionLabel">Lead 1 of 52</span>
+            <span class="field-label tabular" id="detailPositionLabel">Lead 1 of 45</span>
           </div>
 
-          <!-- TAB 1: OUTREACH DISPATCH -->
-          <div id="panelDispatch" class="tab-content">
-            <div id="gatekeeperNotice" class="callout callout-warning hidden"></div>
+          <div class="stage-scroll">
+            <!-- TAB 1: OUTREACH DISPATCH -->
+            <div id="panelDispatch" class="tab-content">
+              <div id="gatekeeperNotice" class="callout callout-warning hidden"></div>
 
-            <!-- Live Hiring Signals Card -->
-            <div class="signals-card" id="hiringSignalsCard">
-              <div class="signals-header">
-                <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px;">
-                  <span class="field-label" style="color:var(--text-primary);">Hiring Signals</span>
-                  <span class="badge tabular" id="sigTierBadge">Evergreen • 10/100</span>
-                  <span class="field-label" id="sigSourcesLabel"></span>
+              <div class="channel-bar">
+                <div class="channel-pills" role="group" aria-label="Outreach channel">
+                  <button type="button" class="channel-btn active" data-channel="email">Cold Email</button>
+                  <button type="button" class="channel-btn" data-channel="linkedin_connect">LinkedIn Connect Note</button>
+                  <button type="button" class="channel-btn" data-channel="linkedin_dm">LinkedIn Follow-Up DM</button>
+                  <button type="button" class="channel-btn" data-channel="followup">7-Day Nudge</button>
                 </div>
-                <button type="button" id="btnRefreshSignals" class="btn btn-sm">
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
-                  <span id="btnRefreshSignalsLabel">Refresh Signals</span>
-                </button>
+
+                <div class="topbar-actions">
+                  <button type="button" id="btnGeminiDraft" class="btn btn-sm btn-primary">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/></svg>
+                    <span id="btnGeminiDraftLabel">Enhance All 4 Channels (Gemini)</span>
+                  </button>
+                  <button type="button" id="btnResetDraft" class="btn btn-sm">Reset Draft</button>
+                </div>
               </div>
-              <p class="cv-copy" id="sigSummaryText"></p>
-              <div class="tag-cloud hidden" id="sigFlagsCloud"></div>
-              <div class="role-list hidden" id="sigOpenRolesList"></div>
+
+              <div class="field-group">
+                <div class="field-header">
+                  <label for="leadContextInput" class="field-label">Additional Context for This School / Angle (optional — used by Gemini)</label>
+                  <span class="badge" id="draftSourceBadge">Clean Direct Draft</span>
+                </div>
+                <div class="context-bar">
+                  <input
+                    id="leadContextInput"
+                    type="text"
+                    class="input composer-input"
+                    placeholder="e.g. Mention Grade 8-10 Maths & netball coaching, available Term 1, willing to do relief cover..."
+                  />
+                  <button type="button" id="btnQuickUploadLink" class="btn btn-sm">Upload CV</button>
+                </div>
+              </div>
+
+              <div id="subjectFieldGroup" class="field-group">
+                <div class="field-header">
+                  <label for="draftSubject" class="field-label">Email Subject Line</label>
+                  <button type="button" id="btnCopySubject" class="btn btn-sm">Copy Subject</button>
+                </div>
+                <input id="draftSubject" type="text" class="input composer-input" />
+              </div>
+
+              <div class="field-group">
+                <div class="field-header">
+                  <label for="draftBody" class="field-label" id="draftBodyLabel">Outreach Message</label>
+                  <span id="charCountLabel" class="field-label tabular mono">0 chars</span>
+                </div>
+                <textarea id="draftBody" class="textarea composer-textarea"></textarea>
+              </div>
+
+              <div class="sticky-action-bar">
+                <div class="topbar-actions">
+                  <button type="button" id="btnCopyMessage" class="btn btn-primary">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    <span>Copy &amp; Mark Dispatched</span>
+                  </button>
+                  <a id="btnMailtoLaunch" href="#" class="btn">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <span>Open in Email App</span>
+                  </a>
+                </div>
+                <span class="field-label mono" id="recommendedAttachmentName"></span>
+              </div>
             </div>
 
-            <div class="channel-bar">
-              <div class="channel-pills" role="group" aria-label="Outreach channel">
-                <button type="button" class="channel-btn active" data-channel="email">Cold Email</button>
-                <button type="button" class="channel-btn" data-channel="linkedin_connect">LinkedIn Connect Note</button>
-                <button type="button" class="channel-btn" data-channel="linkedin_dm">LinkedIn Follow-Up DM</button>
-                <button type="button" class="channel-btn" data-channel="followup">7-Day Nudge</button>
+            <!-- TAB 2: LINKEDIN WORKSPACE -->
+            <div id="panelLinkedin" class="tab-content hidden">
+              <div class="li-router-bar">
+                <div class="topbar-actions">
+                  <a id="liRouteDirectBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    <span id="liRouteDirectLabel">Open LinkedIn Profile</span>
+                  </a>
+                  <a id="liRouteSearchBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                    <span>LinkedIn People Search</span>
+                  </a>
+                  <button type="button" id="btnNextPendingLinkedin" class="btn">Next Uncontacted LinkedIn</button>
+                </div>
+
+                <div class="stat-strip tabular" aria-label="LinkedIn daily safe-rate limits">
+                  <span class="badge" id="liDailyConnectBadge">0 / 20 Connects Today</span>
+                  <span class="badge" id="liDailyDmBadge">0 / 15 DMs Today</span>
+                </div>
               </div>
 
-              <div class="topbar-actions">
-                <button type="button" id="btnGeminiDraft" class="btn btn-sm btn-primary">
+              <div class="status-bar" style="padding-top:0; border-top:none;">
+                <div class="status-pills" id="liStagePills" role="group" aria-label="LinkedIn connection stage">
+                  <button type="button" class="status-pill" data-stage="not_connected">Not Connected</button>
+                  <button type="button" class="status-pill" data-stage="connect_sent">Connect Req Sent</button>
+                  <button type="button" class="status-pill" data-stage="connected">Connected</button>
+                  <button type="button" class="status-pill" data-stage="dm_sent">DM Sent</button>
+                  <button type="button" class="status-pill" data-stage="replied">Replied</button>
+                </div>
+                <button type="button" id="btnLiGeminiRefresh" class="btn btn-sm">
                   <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/></svg>
-                  <span id="btnGeminiDraftLabel">Enhance All 4 Channels (Gemini)</span>
+                  <span id="btnLiGeminiLabel">Enhance LinkedIn Copy (Gemini)</span>
                 </button>
-                <button type="button" id="btnResetDraft" class="btn btn-sm">Reset Draft</button>
-              </div>
-            </div>
-
-            <div class="field-group">
-              <div class="field-header">
-                <label for="leadContextInput" class="field-label">Additional Context for This School / Angle (optional — used by Gemini)</label>
-                <span class="badge" id="draftSourceBadge">Clean Direct Draft</span>
-              </div>
-              <div class="context-bar">
-                <input
-                  id="leadContextInput"
-                  type="text"
-                  class="input composer-input"
-                  placeholder="e.g. Mention Grade 8-10 Maths & netball coaching, available Term 1, willing to do relief cover..."
-                />
-                <button type="button" id="btnQuickUploadLink" class="btn btn-sm">Upload CV</button>
-              </div>
-            </div>
-
-            <div id="subjectFieldGroup" class="field-group">
-              <div class="field-header">
-                <label for="draftSubject" class="field-label">Email Subject Line</label>
-                <button type="button" id="btnCopySubject" class="btn btn-sm">Copy Subject</button>
-              </div>
-              <input id="draftSubject" type="text" class="input composer-input" />
-            </div>
-
-            <div class="field-group">
-              <div class="field-header">
-                <label for="draftBody" class="field-label" id="draftBodyLabel">Outreach Message</label>
-                <span id="charCountLabel" class="field-label tabular mono">0 chars</span>
-              </div>
-              <textarea id="draftBody" class="textarea composer-textarea"></textarea>
-            </div>
-
-            <div class="action-row">
-              <div class="topbar-actions">
-                <button type="button" id="btnCopyMessage" class="btn btn-primary">
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                  <span>Copy &amp; Mark Dispatched</span>
-                </button>
-                <a id="btnMailtoLaunch" href="#" class="btn">
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                  <span>Open in Email App</span>
-                </a>
-              </div>
-              <span class="field-label mono" id="recommendedAttachmentName"></span>
-            </div>
-
-            <div class="field-group">
-              <label for="leadNotes" class="field-label">Private Application Notes (auto-saved)</label>
-              <textarea
-                id="leadNotes"
-                class="textarea notes-textarea"
-                placeholder="Track dates sent, referral names, open vacancies seen on their website, or interview follow-ups..."
-              ></textarea>
-            </div>
-          </div>
-
-          <!-- TAB 2: LINKEDIN WORKSPACE -->
-          <div id="panelLinkedin" class="tab-content hidden">
-            <div class="li-router-bar">
-              <div class="topbar-actions">
-                <a id="liRouteDirectBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                  <span id="liRouteDirectLabel">Open LinkedIn Profile</span>
-                </a>
-                <a id="liRouteSearchBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn">
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                  <span>LinkedIn People Search</span>
-                </a>
-                <button type="button" id="btnNextPendingLinkedin" class="btn">Next Uncontacted LinkedIn</button>
               </div>
 
-              <div class="stat-strip tabular" aria-label="LinkedIn daily safe-rate limits">
-                <span class="badge" id="liDailyConnectBadge">0 / 20 Connects Today</span>
-                <span class="badge" id="liDailyDmBadge">0 / 15 DMs Today</span>
-              </div>
-            </div>
-
-            <div class="status-bar" style="padding-top:0; border-top:none;">
-              <div class="status-pills" id="liStagePills" role="group" aria-label="LinkedIn connection stage">
-                <button type="button" class="status-pill" data-stage="not_connected">Not Connected</button>
-                <button type="button" class="status-pill" data-stage="connect_sent">Connect Req Sent</button>
-                <button type="button" class="status-pill" data-stage="connected">Connected</button>
-                <button type="button" class="status-pill" data-stage="dm_sent">DM Sent</button>
-                <button type="button" class="status-pill" data-stage="replied">Replied</button>
-              </div>
-              <button type="button" id="btnLiGeminiRefresh" class="btn btn-sm">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/></svg>
-                <span id="btnLiGeminiLabel">Enhance LinkedIn Copy (Gemini)</span>
-              </button>
-            </div>
-
-            <div class="cv-grid">
-              <!-- Card 1: Pre-Connection Note -->
-              <article class="cv-block">
-                <h3 class="cv-block-title">
-                  <span>1. Pre-Connection Note</span>
-                  <span id="liConnectCharCount" class="field-label tabular mono">0 / 300</span>
-                </h3>
-                <textarea id="liConnectDraft" class="textarea" style="min-height:130px; padding:10px 12px; font-size:13px;"></textarea>
-                <div class="topbar-actions">
-                  <button type="button" id="btnLiCopyConnect" class="btn btn-sm">Copy Note</button>
-                  <button type="button" id="btnLiDispatchConnect" class="btn btn-sm btn-primary">Copy Note &amp; Open LinkedIn</button>
-                </div>
-              </article>
-
-              <!-- Card 2: Post-Connection DM -->
-              <article class="cv-block">
-                <h3 class="cv-block-title">
-                  <span>2. Post-Connection DM</span>
-                  <span id="liDmCharCount" class="field-label tabular mono">0 chars</span>
-                </h3>
-                <textarea id="liDmDraft" class="textarea" style="min-height:130px; padding:10px 12px; font-size:13px;"></textarea>
-                <div class="topbar-actions">
-                  <button type="button" id="btnLiCopyDm" class="btn btn-sm">Copy DM</button>
-                  <button type="button" id="btnLiDispatchDm" class="btn btn-sm btn-primary">Copy DM &amp; Open LinkedIn</button>
-                </div>
-              </article>
-
-              <!-- Card 3: Career Path Snapshot -->
-              <article class="cv-block">
-                <h3 class="cv-block-title">
-                  <span>Recipient Career History</span>
-                  <span class="badge" id="liCareerTierBadge">Principal / Head</span>
-                </h3>
-                <p class="cv-copy">Use a genuine detail from their path when personalizing your note:</p>
-                <div class="tag-cloud" id="liExperienceCloud"></div>
-              </article>
-
-              <!-- Card 4: Same-School Decision-Maker LinkedIn Roster -->
-              <article class="cv-block">
-                <h3 class="cv-block-title">
-                  <span>Decision Makers at This Institution</span>
-                  <span class="field-label tabular" id="liRosterCount">1 contact</span>
-                </h3>
-                <div class="li-roster-list" id="liInstitutionRoster"></div>
-              </article>
-            </div>
-          </div>
-
-          <!-- TAB 3: CONTEXTUALLY AWARE CV COMPILER -->
-          <div id="panelCv" class="tab-content hidden">
-            <div class="cv-grid">
-              <!-- Block 1: Decision-Maker Lens -->
-              <article class="cv-block">
-                <h3 class="cv-block-title">
-                  <span>Decision-Maker Lens</span>
-                  <span class="badge" id="cvLensTier">Principal / Head</span>
-                </h3>
-                <p class="cv-copy" id="cvLensSummary"></p>
-                <div>
-                  <span class="field-label">Their Verified LinkedIn Skills &amp; Background</span>
-                  <div class="tag-cloud" id="cvLeadSkillsCloud" style="margin-top:6px;"></div>
-                </div>
-              </article>
-
-              <!-- Block 2: School & Curriculum Context -->
-              <article class="cv-block">
-                <h3 class="cv-block-title">
-                  <span>Institution Context</span>
-                  <span class="badge" id="cvInstType">Private School Group</span>
-                </h3>
-                <div class="tag-cloud" id="cvSchoolSignals"></div>
-                <p class="cv-copy" id="cvSchoolDescription"></p>
-              </article>
-
-              <!-- Block 3: Live CV Keyword Gap Scanner -->
-              <article class="cv-block cv-block-full">
-                <h3 class="cv-block-title">
-                  <span>Context-Aware CV Keyword Match</span>
-                  <span class="badge badge-info tabular" id="cvGapScoreBadge">No CV pasted yet</span>
-                </h3>
-                <p class="cv-copy" id="cvGapAdvice"></p>
-                <div class="cv-grid" style="gap:10px;">
-                  <div>
-                    <span class="field-label">Matched in Your CV</span>
-                    <div class="tag-cloud" id="cvMatchedTags" style="margin-top:6px;"></div>
-                  </div>
-                  <div>
-                    <span class="field-label">High-Signal Keywords to Weave Into This CV Version</span>
-                    <div class="tag-cloud" id="cvMissingTags" style="margin-top:6px;"></div>
-                  </div>
-                </div>
-              </article>
-
-              <!-- Block 4: Positioning Rules for Candidate Track -->
-              <article class="cv-block">
-                <h3 class="cv-block-title">
-                  <span>CV Positioning Directives</span>
-                  <span class="badge" id="cvTrackBadge">Educator Track</span>
-                </h3>
-                <ul class="bullet-list" id="cvDirectivesList"></ul>
-              </article>
-
-              <!-- Block 5: Pre-Send CV Checklist -->
-              <article class="cv-block">
-                <h3 class="cv-block-title">
-                  <span>Pre-Send Compiler Checklist</span>
-                  <span class="field-label tabular" id="cvChecklistProgress">0/5</span>
-                </h3>
-                <div class="checklist" id="cvChecklist"></div>
-                <div style="margin-top:auto; padding-top:8px;">
-                  <span class="field-label">Recommended PDF Filename:</span>
-                  <div class="snippet-box mono" id="cvFilenameBox" style="margin-top:4px; padding:8px 10px;"></div>
-                </div>
-              </article>
-
-              <!-- Block 6: Tailored CV Summary & Bullet Starters -->
-              <article class="cv-block cv-block-full">
-                <h3 class="cv-block-title">
-                  <span>Ready-to-Paste CV Summary &amp; Bullet Starters</span>
+              <div class="cv-grid">
+                <!-- Card 1: Pre-Connection Note -->
+                <article class="cv-block">
+                  <h3 class="cv-block-title">
+                    <span>1. Pre-Connection Note</span>
+                    <span id="liConnectCharCount" class="field-label tabular mono">0 / 300</span>
+                  </h3>
+                  <textarea id="liConnectDraft" class="textarea" style="min-height:130px; padding:10px 12px; font-size:13px;"></textarea>
                   <div class="topbar-actions">
-                    <button type="button" id="btnGeminiCvTips" class="btn btn-sm btn-primary">
-                      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/></svg>
-                      <span id="btnGeminiCvLabel">Tailor with Gemini</span>
-                    </button>
-                    <button type="button" id="btnCopyCvSummary" class="btn btn-sm">Copy Summary &amp; Bullets</button>
-                    <button type="button" id="btnCopyAiPrompt" class="btn btn-sm">Copy AI Prompt</button>
+                    <button type="button" id="btnLiCopyConnect" class="btn btn-sm">Copy Note</button>
+                    <button type="button" id="btnLiDispatchConnect" class="btn btn-sm btn-primary">Copy Note &amp; Open LinkedIn</button>
                   </div>
-                </h3>
-                <div class="snippet-box" id="cvSummarySnippet"></div>
-                <ul class="bullet-list" id="cvBulletStarters"></ul>
-                <div id="cvGeminiGapBox" class="hidden" style="margin-top:6px;">
-                  <span class="field-label">Gemini Page-1 Tailoring Edits (based on your uploaded CV):</span>
-                  <ul class="bullet-list" id="cvGeminiGapList" style="margin-top:6px;"></ul>
-                </div>
-              </article>
+                </article>
+
+                <!-- Card 2: Post-Connection DM -->
+                <article class="cv-block">
+                  <h3 class="cv-block-title">
+                    <span>2. Post-Connection DM</span>
+                    <span id="liDmCharCount" class="field-label tabular mono">0 chars</span>
+                  </h3>
+                  <textarea id="liDmDraft" class="textarea" style="min-height:130px; padding:10px 12px; font-size:13px;"></textarea>
+                  <div class="topbar-actions">
+                    <button type="button" id="btnLiCopyDm" class="btn btn-sm">Copy DM</button>
+                    <button type="button" id="btnLiDispatchDm" class="btn btn-sm btn-primary">Copy DM &amp; Open LinkedIn</button>
+                  </div>
+                </article>
+
+                <!-- Card 3: Career Path Snapshot -->
+                <article class="cv-block">
+                  <h3 class="cv-block-title">
+                    <span>Recipient Career History</span>
+                    <span class="badge" id="liCareerTierBadge">Principal / Head</span>
+                  </h3>
+                  <p class="cv-copy">Use a genuine detail from their path when personalizing your note:</p>
+                  <div class="tag-cloud" id="liExperienceCloud"></div>
+                </article>
+
+                <!-- Card 4: Same-School Decision-Maker LinkedIn Roster -->
+                <article class="cv-block">
+                  <h3 class="cv-block-title">
+                    <span>Decision Makers at This Institution</span>
+                    <span class="field-label tabular" id="liRosterCount">1 contact</span>
+                  </h3>
+                  <div class="li-roster-list" id="liInstitutionRoster"></div>
+                </article>
+              </div>
+            </div>
+
+            <!-- TAB 3: CONTEXTUALLY AWARE CV COMPILER -->
+            <div id="panelCv" class="tab-content hidden">
+              <div class="cv-grid">
+                <!-- Block 1: Decision-Maker Lens -->
+                <article class="cv-block">
+                  <h3 class="cv-block-title">
+                    <span>Decision-Maker Lens</span>
+                    <span class="badge" id="cvLensTier">Principal / Head</span>
+                  </h3>
+                  <p class="cv-copy" id="cvLensSummary"></p>
+                  <div>
+                    <span class="field-label">Their Verified LinkedIn Skills &amp; Background</span>
+                    <div class="tag-cloud" id="cvLeadSkillsCloud" style="margin-top:6px;"></div>
+                  </div>
+                </article>
+
+                <!-- Block 2: School & Curriculum Context -->
+                <article class="cv-block">
+                  <h3 class="cv-block-title">
+                    <span>Institution Context</span>
+                    <span class="badge" id="cvInstType">Private School Group</span>
+                  </h3>
+                  <div class="tag-cloud" id="cvSchoolSignals"></div>
+                  <p class="cv-copy" id="cvSchoolDescription"></p>
+                </article>
+
+                <!-- Block 3: Live CV Keyword Gap Scanner -->
+                <article class="cv-block cv-block-full">
+                  <h3 class="cv-block-title">
+                    <span>Context-Aware CV Keyword Match</span>
+                    <span class="badge badge-info tabular" id="cvGapScoreBadge">No CV pasted yet</span>
+                  </h3>
+                  <p class="cv-copy" id="cvGapAdvice"></p>
+                  <div class="cv-grid" style="gap:10px;">
+                    <div>
+                      <span class="field-label">Matched in Your CV</span>
+                      <div class="tag-cloud" id="cvMatchedTags" style="margin-top:6px;"></div>
+                    </div>
+                    <div>
+                      <span class="field-label">High-Signal Keywords to Weave Into This CV Version</span>
+                      <div class="tag-cloud" id="cvMissingTags" style="margin-top:6px;"></div>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Block 4: Positioning Rules for Candidate Track -->
+                <article class="cv-block">
+                  <h3 class="cv-block-title">
+                    <span>CV Positioning Directives</span>
+                    <span class="badge" id="cvTrackBadge">Educator Track</span>
+                  </h3>
+                  <ul class="bullet-list" id="cvDirectivesList"></ul>
+                </article>
+
+                <!-- Block 5: Pre-Send CV Checklist -->
+                <article class="cv-block">
+                  <h3 class="cv-block-title">
+                    <span>Pre-Send Compiler Checklist</span>
+                    <span class="field-label tabular" id="cvChecklistProgress">0/5</span>
+                  </h3>
+                  <div class="checklist" id="cvChecklist"></div>
+                  <div style="margin-top:auto; padding-top:8px;">
+                    <span class="field-label">Recommended PDF Filename:</span>
+                    <div class="snippet-box mono" id="cvFilenameBox" style="margin-top:4px; padding:8px 10px;"></div>
+                  </div>
+                </article>
+
+                <!-- Block 6: Tailored CV Summary & Bullet Starters -->
+                <article class="cv-block cv-block-full">
+                  <h3 class="cv-block-title">
+                    <span>Ready-to-Paste CV Summary &amp; Bullet Starters</span>
+                    <div class="topbar-actions">
+                      <button type="button" id="btnGeminiCvTips" class="btn btn-sm btn-primary">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2z"/></svg>
+                        <span id="btnGeminiCvLabel">Tailor with Gemini</span>
+                      </button>
+                      <button type="button" id="btnCopyCvSummary" class="btn btn-sm">Copy Summary &amp; Bullets</button>
+                      <button type="button" id="btnCopyAiPrompt" class="btn btn-sm">Copy AI Prompt</button>
+                    </div>
+                  </h3>
+                  <div class="snippet-box" id="cvSummarySnippet"></div>
+                  <ul class="bullet-list" id="cvBulletStarters"></ul>
+                  <div id="cvGeminiGapBox" class="hidden" style="margin-top:6px;">
+                    <span class="field-label">Gemini Page-1 Tailoring Edits (based on your uploaded CV):</span>
+                    <ul class="bullet-list" id="cvGeminiGapList" style="margin-top:6px;"></ul>
+                  </div>
+                </article>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      <!-- PANE 3: Right Context & Intelligence Rail -->
+      <aside id="contextRail" class="context-rail" aria-label="Institution intelligence and notes">
+        <article class="rail-card" id="hiringSignalsCard">
+          <div class="rail-card-header">
+            <div style="display:flex; flex-wrap:wrap; align-items:center; gap:6px;">
+              <h3 class="rail-card-title">Hiring Signals</h3>
+              <span class="badge tabular" id="sigTierBadge">Evergreen • 10/100</span>
+            </div>
+            <button type="button" id="btnRefreshSignals" class="btn btn-sm" title="Scan live institution website & careers page">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+              <span id="btnRefreshSignalsLabel">Refresh</span>
+            </button>
+          </div>
+          <span class="field-label" id="sigSourcesLabel"></span>
+          <p class="cv-copy" id="sigSummaryText"></p>
+          <div class="tag-cloud hidden" id="sigFlagsCloud"></div>
+          <div class="role-list hidden" id="sigOpenRolesList"></div>
+        </article>
+
+        <article class="rail-card">
+          <div class="rail-card-header">
+            <h3 class="rail-card-title">Decision-Maker Lens</h3>
+            <span class="badge" id="railLensTier">Principal / Head</span>
+          </div>
+          <p class="cv-copy" id="railLensSummary"></p>
+          <div class="tag-cloud" id="railSkillsCloud"></div>
+        </article>
+
+        <article class="rail-card">
+          <div class="rail-card-header">
+            <label for="leadNotes" class="rail-card-title">Private Notes</label>
+            <span class="field-label" style="font-size:10.5px;">Auto-saved</span>
+          </div>
+          <textarea
+            id="leadNotes"
+            class="textarea notes-textarea"
+            placeholder="Track dates sent, referral names, open vacancies seen, or interview follow-ups..."
+          ></textarea>
+        </article>
+      </aside>
     </main>
   </div>
 
