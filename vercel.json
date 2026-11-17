@@ -1,5 +1,10 @@
 {
   "version": 2,
+  "functions": {
+    "api/index.py": {
+      "includeFiles": "{data/**,scripts/**,server.py}"
+    }
+  },
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/index.py" },
     { "source": "/leads.json", "destination": "/api/index.py" },

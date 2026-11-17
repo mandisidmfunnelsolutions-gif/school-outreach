@@ -10,6 +10,8 @@ Usage:
   python3 server.py 3005
 """
 
+from __future__ import annotations
+
 import base64
 import io
 import json
@@ -30,7 +32,6 @@ BASE_DIR = Path(__file__).resolve().parent
 WORKSPACE_ROOT = BASE_DIR.parent.parent
 DATA_DIR = BASE_DIR / "data"
 WRITABLE_DATA_DIR = DATA_DIR if os.access(DATA_DIR, os.W_OK) else Path("/tmp/school-outreach-dispatch-data")
-WRITABLE_DATA_DIR.mkdir(parents=True, exist_ok=True)
 JSON_FILE = DATA_DIR / "school_decision_makers.json"
 CSV_FILE = DATA_DIR / "school_decision_makers.csv"
 STATES_FILE = WRITABLE_DATA_DIR / "lead_states.json"
@@ -300,7 +301,7 @@ class DispatchHandler(BaseHTTPRequestHandler):
         if path == "/api/lead-states":
             try:
                 parsed = self._read_json_body()
-                DATA_DIR.mkdir(parents=True, exist_ok=True)
+                STATES_FILE.parent.mkdir(parents=True, exist_ok=True)
                 STATES_FILE.write_text(json.dumps(parsed, indent=2, ensure_ascii=False), encoding="utf-8")
                 self._send_json(200, {"ok": True})
             except Exception as exc:
@@ -310,7 +311,7 @@ class DispatchHandler(BaseHTTPRequestHandler):
         if path == "/api/profile":
             try:
                 parsed = self._read_json_body()
-                DATA_DIR.mkdir(parents=True, exist_ok=True)
+                PROFILE_FILE.parent.mkdir(parents=True, exist_ok=True)
                 PROFILE_FILE.write_text(json.dumps(parsed, indent=2, ensure_ascii=False), encoding="utf-8")
                 self._send_json(200, {"ok": True})
             except Exception as exc:
@@ -530,12 +531,6 @@ class DispatchHandler(BaseHTTPRequestHandler):
 
 class ReusableTCPServer(socketserver.TCPServer):
     allow_reuse_address = True
-
-
-# Top-level exports for Vercel Python runtime
-handler = DispatchHandler
-app = DispatchHandler
-application = DispatchHandler
 
 
 def main() -> None:

@@ -109,20 +109,11 @@ def load_gemini_api_key() -> str:
 
 
 def curl_fetch(url: str, timeout: int = 8) -> tuple[str, str]:
-    """Fetches a URL using system curl to handle TLS intermediate certs and modern WAFs."""
+    """Fetches a URL using system curl with urllib fallback for serverless environments."""
+    ua = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
     try:
         res = subprocess.run(
-            [
-                "curl",
-                "-sSL",
-                "--max-time",
-                str(timeout),
-                "-A",
-                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
-                "-w",
-                "\n__FINAL_URL__:%{url_effective}__HTTP_CODE__:%{http_code}",
-                url,
-            ],
+            ["curl", "-sSL", "--max-time", str(timeout), "-A", ua, "-w", "\n__FINAL_URL__:%{url_effective}__HTTP_CODE__:%{http_code}", url],
             capture_output=True,
             text=True,
             timeout=timeout + 3,
@@ -139,9 +130,15 @@ def curl_fetch(url: str, timeout: int = 8) -> tuple[str, str]:
                 code = int(m.group(2))
         else:
             html = out
-        if code >= 400 or not html:
-            return "", final_url
-        return html, final_url
+        if code < 400 and html:
+            return html, final_url
+    except Exception:
+        pass
+
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": ua})
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            return resp.read().decode("utf-8", errors="ignore"), resp.geturl() or url
     except Exception:
         return "", url
 
@@ -204,7 +201,7 @@ def discover_career_links(base_url: str, html: str, domain: str) -> list[str]:
     links = re.findall(r'href=["\']([^"\'#]+)["\'][^>]*>(.*?)</a>', html, re.I | re.S)
     candidates: list[tuple[int, str]] = []
     seen = set()
-    bdom = domain.lower().strip().removeprefix("www.")
+    bdom = strip_www(domain)
     for href, label in links:
         href = href.strip()
         if not href or href.startswith(("mailto:", "tel:", "javascript:")):
@@ -212,10 +209,13 @@ def discover_career_links(base_url: str, html: str, domain: str) -> list[str]:
         if any(href.lower().endswith(ext) for ext in (".css", ".js", ".png", ".jpg", ".svg", ".ico")):
             continue
         full = urllib.parse.urljoin(base_url, href)
-        host = urllib.parse.urlparse(full).netloc.lower().removeprefix("www.")
+        host = urllib.parse.urlparse(full).netloc.lower()
+        if host.startswith("www."):
+            host = host[4:]
+        bdom_clean = bdom[4:] if bdom.startswith("www.") else bdom
         is_same_or_ats = (
-            host == bdom
-            or host.endswith("." + bdom)
+            host == bdom_clean
+            or host.endswith("." + bdom_clean)
             or any(ats in host for ats in KNOWN_ATS_HOSTS)
         )
         if not is_same_or_ats:
@@ -430,6 +430,11 @@ def fetch_isasa_snapshot() -> str:
     return html_to_text(html).lower() if html else ""
 
 
+def strip_www(value: str) -> str:
+    s = clean_ws(value).lower()
+    return s[4:] if s.startswith("www.") else s
+
+
 def enrich_institution(
     business_name: str,
     domain: str,
@@ -437,7 +442,7 @@ def enrich_institution(
     isasa_text: str = "",
     use_gemini: bool = True,
 ) -> dict:
-    clean_dom = clean_ws(domain).lower().removeprefix("www.")
+    clean_dom = strip_www(domain)
     base_url = normalize_website(website or clean_dom)
 
     homepage_html = ""
@@ -559,7 +564,7 @@ def save_cache(cache: dict[str, dict]) -> None:
 
 def attach_signals_to_leads(leads: list[dict], cache: dict[str, dict]) -> list[dict]:
     for lead in leads:
-        dom = clean_ws(lead.get("business_domain", "")).lower().removeprefix("www.")
+        dom = strip_www(lead.get("business_domain", ""))
         sig = cache.get(dom)
         if sig:
             lead["hiring_signals"] = {
@@ -608,7 +613,7 @@ def enrich_domains_for_leads(
     to_fetch: dict[str, tuple[str, str]] = {}
 
     for lead in leads:
-        dom = clean_ws(lead.get("business_domain", "")).lower().removeprefix("www.")
+        dom = strip_www(lead.get("business_domain", ""))
         if not dom or dom in to_fetch:
             continue
         existing = cache.get(dom)
@@ -718,7 +723,7 @@ def ingest_csv_text(
         domain = _pick_col(row, "business_domain", "domain", "Domain", "company_domain")
         if not domain and website:
             parsed_u = urllib.parse.urlparse(normalize_website(website))
-            domain = parsed_u.netloc.lower().removeprefix("www.")
+            domain = strip_www(parsed_u.netloc)
         email = _pick_col(row, "contact_professions_email", "email", "Email", "work_email", "Work Email").lower()
         if not domain and "@" in email:
             domain = email.split("@", 1)[1]

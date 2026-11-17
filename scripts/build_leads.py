@@ -9,6 +9,8 @@ Outputs:
   - leads-data.js (zero-CORS embedded dataset for direct browser/local usage)
 """
 
+from __future__ import annotations
+
 import csv
 import json
 import re
@@ -23,7 +25,6 @@ SOURCE_CSVS = [
 ]
 
 DATA_DIR = BASE_DIR / "data"
-DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 
 def clean_ws(value: str) -> str:
@@ -267,6 +268,7 @@ def is_popi_safe_contact(email: str, email_status: str, business_domain: str) ->
 
 
 def main() -> None:
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
     seen: dict[str, dict] = {}
     for csv_path in SOURCE_CSVS:
         if not csv_path.exists():
