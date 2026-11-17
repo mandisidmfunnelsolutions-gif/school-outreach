@@ -1,0 +1,10 @@
+.env
+.env.local
+__pycache__/
+**/__pycache__/
+*.pyc
+.DS_Store
+node_modules/
+data/candidate_profile.json
+data/lead_states.json
+data/lists/

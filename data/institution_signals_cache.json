@@ -1,0 +1,1102 @@
+{
+  "benhaleacademy.com": {
+    "domain": "benhaleacademy.com",
+    "business_name": "BenHale Academy (Pty) Ltd",
+    "careers_url": "https://www.benhaleacademy.com/careers",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "direct_email",
+    "public_recruitment_email": "info@benhaleacademy.com",
+    "urgency_flags": [],
+    "expansion_signals": [
+      "Enrollment open for 2027"
+    ],
+    "leadership_signals": [],
+    "signal_summary": "BenHale Academy is currently accepting general CV submissions via email for future opportunities, though no specific vacancies are listed. The school is actively promoting enrollment for the 2027 academic year.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "gemini-3-flash-preview",
+    "enriched_at": "2026-11-16T21:52:13.909992+00:00",
+    "hiring_intent_score": 25,
+    "hiring_tier": "Evergreen"
+  },
+  "isct.co.za": {
+    "domain": "isct.co.za",
+    "business_name": "International School of Cape Town",
+    "careers_url": "https://www.isct.co.za/vacancies/",
+    "open_roles": [
+      {
+        "title": "Substitute Teacher",
+        "department_or_phase": "All Phases",
+        "contract_type": "Ad-hoc",
+        "closing_date": "None",
+        "apply_url": "https://www.isct.co.za/vacancies/",
+        "source": "isct.co.za"
+      },
+      {
+        "title": "Teaching Assistant",
+        "department_or_phase": "All Phases",
+        "contract_type": "Ad-hoc",
+        "closing_date": "None",
+        "apply_url": "https://www.isct.co.za/vacancies/",
+        "source": "isct.co.za"
+      }
+    ],
+    "open_roles_count": 2,
+    "application_channel": "direct_email",
+    "public_recruitment_email": "employment@isct.co.za",
+    "urgency_flags": [
+      "Ad-hoc"
+    ],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "The International School of Cape Town is currently maintaining an active talent pool for substitute teachers and teaching assistants. While no specific permanent vacancies are listed in the text, the school cross-posts all current openings to the ISASA website.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "gemini-3-flash-preview",
+    "enriched_at": "2026-11-16T21:52:15.414786+00:00",
+    "hiring_intent_score": 90,
+    "hiring_tier": "Hot Hiring"
+  },
+  "cornwall.co.za": {
+    "domain": "cornwall.co.za",
+    "business_name": "Cornwall Hill College",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Cornwall Hill College maintains a dedicated careers section on their website, but no specific active vacancies or closing dates are evidenced in the provided text.",
+    "sources": [
+      "Institution Homepage"
+    ],
+    "extractor": "gemini-3-flash-preview",
+    "enriched_at": "2026-11-16T21:52:15.827013+00:00",
+    "hiring_intent_score": 10,
+    "hiring_tier": "Evergreen"
+  },
+  "curro.co.za": {
+    "domain": "curro.co.za",
+    "business_name": "Curro Holdings Limited",
+    "careers_url": "https://curro.myrecruit.co.za/?com=search&entity=197",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "school_portal",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Curro Holdings utilizes a centralized talent portal (myRecruit) to manage vacancies across its extensive network of schools in South Africa, Namibia, and Botswana. While the portal is active for permanent and contract positions, no specific individual job titles were listed in the provided text.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "gemini-3-flash-preview",
+    "enriched_at": "2026-11-16T21:52:16.043564+00:00",
+    "hiring_intent_score": 15,
+    "hiring_tier": "Evergreen"
+  },
+  "sparkschools.co.za": {
+    "domain": "sparkschools.co.za",
+    "business_name": "SPARK Schools",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "ats",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [
+      "Spark Alberton Primary officially opens",
+      "Spark Riversands High School celebrates official opening"
+    ],
+    "leadership_signals": [
+      "New Spark Schools MD appointed for South Africa"
+    ],
+    "signal_summary": "SPARK Schools is showing strong growth with the recent opening of Alberton Primary and Riversands High School, alongside the appointment of a new Managing Director. While a dedicated Workable recruitment portal is maintained, no specific active vacancies were listed in the provided text.",
+    "sources": [
+      "Institution Homepage"
+    ],
+    "extractor": "gemini-3-flash-preview",
+    "enriched_at": "2026-11-16T21:52:22.624486+00:00",
+    "hiring_intent_score": 20,
+    "hiring_tier": "Evergreen"
+  },
+  "hps.co.za": {
+    "domain": "hps.co.za",
+    "business_name": "Highbury Preparatory School",
+    "careers_url": "https://hps.co.za/vacancies/",
+    "open_roles": [
+      {
+        "title": "Head of Sport",
+        "department_or_phase": "Sport",
+        "contract_type": "",
+        "closing_date": "",
+        "apply_url": "https://hps.co.za/vacancies/",
+        "source": "https://hps.co.za/vacancies/"
+      },
+      {
+        "title": "Foundation Phase Secretary",
+        "department_or_phase": "Foundation Phase",
+        "contract_type": "",
+        "closing_date": "",
+        "apply_url": "https://hps.co.za/vacancies/",
+        "source": "https://hps.co.za/vacancies/"
+      },
+      {
+        "title": "Foundation and Admissions Officer",
+        "department_or_phase": "Administration / Admissions",
+        "contract_type": "",
+        "closing_date": "",
+        "apply_url": "https://hps.co.za/vacancies/",
+        "source": "https://hps.co.za/vacancies/"
+      }
+    ],
+    "open_roles_count": 3,
+    "application_channel": "isasa",
+    "public_recruitment_email": "internships@hps.co.za",
+    "urgency_flags": [
+      "January 2027"
+    ],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Highbury Preparatory School has active vacancies for January 2027, including Head of Sport, Foundation Phase Secretary, and Foundation and Admissions Officer, alongside ongoing applications for educational internships.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "gemini-flash-lite-latest",
+    "enriched_at": "2026-11-16T21:52:30.259568+00:00",
+    "hiring_intent_score": 90,
+    "hiring_tier": "Hot Hiring"
+  },
+  "cliftonschool.co.za": {
+    "domain": "cliftonschool.co.za",
+    "business_name": "Clifton School",
+    "careers_url": "https://www.cliftonschool.co.za/join-our-team/",
+    "open_roles": [
+      {
+        "title": "Senior Primary Teacher",
+        "department_or_phase": "Senior Primary",
+        "contract_type": "",
+        "closing_date": "",
+        "apply_url": "https://www.cliftonschool.co.za/join-our-team/",
+        "source": "https://www.cliftonschool.co.za/join-our-team/"
+      },
+      {
+        "title": "Wellbeing Support Unit",
+        "department_or_phase": "",
+        "contract_type": "",
+        "closing_date": "",
+        "apply_url": "https://www.cliftonschool.co.za/join-our-team/",
+        "source": "https://www.cliftonschool.co.za/join-our-team/"
+      },
+      {
+        "title": "Strength & Conditioning Coach & Teacher of Life or Sport Science (Grade 8 - 12)",
+        "department_or_phase": "Grade 8 - 12",
+        "contract_type": "",
+        "closing_date": "",
+        "apply_url": "https://www.cliftonschool.co.za/join-our-team/",
+        "source": "https://www.cliftonschool.co.za/join-our-team/"
+      }
+    ],
+    "open_roles_count": 3,
+    "application_channel": "school_portal",
+    "public_recruitment_email": "clifton@cliftonschool.co.za",
+    "urgency_flags": [
+      "Term 1 of 2027",
+      "January 2027"
+    ],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Clifton School has active job vacancies listed for the upcoming 2027 academic year, including positions for a Senior Primary Teacher, Wellbeing Support Unit staff, and a Strength & Conditioning Coach/Teacher.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "gemini-flash-lite-latest",
+    "enriched_at": "2026-11-16T21:52:33.318932+00:00",
+    "hiring_intent_score": 90,
+    "hiring_tier": "Hot Hiring"
+  },
+  "stdavids.co.za": {
+    "domain": "stdavids.co.za",
+    "business_name": "St David's Marist Inanda",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "St David's Marist Inanda's current web pages highlight general school news, community engagement, and foundation updates, with no active staff recruitment or expansion signals explicitly mentioned in the provided text.",
+    "sources": [
+      "Institution Homepage"
+    ],
+    "extractor": "gemini-flash-lite-latest",
+    "enriched_at": "2026-11-16T21:52:33.848107+00:00",
+    "hiring_intent_score": 10,
+    "hiring_tier": "Evergreen"
+  },
+  "midstreamcollege.co.za": {
+    "domain": "midstreamcollege.co.za",
+    "business_name": "Midstream College",
+    "careers_url": "https://www.midstreamcollege.co.za/about/vacancies/",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "direct_email",
+    "public_recruitment_email": "college@midstreamcollege.co.za",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Midstream College currently has no active job vacancies listed on its careers page. General inquiries can be directed to their official email address.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "gemini-flash-lite-latest",
+    "enriched_at": "2026-11-16T21:52:34.261070+00:00",
+    "hiring_intent_score": 15,
+    "hiring_tier": "Evergreen"
+  },
+  "cedarwoodschool.co.za": {
+    "domain": "cedarwoodschool.co.za",
+    "business_name": "Cedarwood School RSA",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Cedarwood School currently shows no active job vacancies or expansion signals in the provided text. The institution remains focused on its inclusive remedial education for Preparatory and College levels.",
+    "sources": [
+      "Institution Homepage"
+    ],
+    "extractor": "gemini-3-flash-preview",
+    "enriched_at": "2026-11-16T21:52:37.419715+00:00",
+    "hiring_intent_score": 10,
+    "hiring_tier": "Evergreen"
+  },
+  "rondebosch.com": {
+    "domain": "rondebosch.com",
+    "business_name": "Rondebosch Boys' High School",
+    "careers_url": "https://rondebosch.com/vacancies/",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "school_portal",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Rondebosch Boys' High School maintains a dedicated vacancies page linking to separate portals for its preparatory and high school sections, though no specific active job postings were detailed in the crawled text.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "gemini-flash-lite-latest",
+    "enriched_at": "2026-11-16T21:52:40.385639+00:00",
+    "hiring_intent_score": 15,
+    "hiring_tier": "Evergreen"
+  },
+  "bishops.org.za": {
+    "domain": "bishops.org.za",
+    "business_name": "Bishops Diocesan College",
+    "careers_url": "https://www.bishops.org.za/Info/Vacancies",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "school_portal",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Careers portal active at https://www.bishops.org.za/Info/Vacancies; monitor for termly openings.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T21:52:41.253177+00:00",
+    "hiring_intent_score": 15,
+    "hiring_tier": "Evergreen"
+  },
+  "woodridge.co.za": {
+    "domain": "woodridge.co.za",
+    "business_name": "Woodridge College & Preparatory School",
+    "careers_url": "https://www.woodridge.co.za/about-us/vacancies",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Woodridge College & Preparatory School currently lists no active job vacancies on its careers page, noting that new positions are published on their site, ISASA, and LinkedIn when available.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "gemini-flash-lite-latest",
+    "enriched_at": "2026-11-16T21:52:41.819603+00:00",
+    "hiring_intent_score": 15,
+    "hiring_tier": "Evergreen"
+  },
+  "koaacademy.com": {
+    "domain": "koaacademy.com",
+    "business_name": "Koa Academy",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "No public vacancies page detected via automated crawl for koaacademy.com; speculative direct outreach recommended.",
+    "sources": [
+      "Domain Lookup"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T21:52:42.389237+00:00",
+    "hiring_intent_score": 10,
+    "hiring_tier": "Evergreen"
+  },
+  "elkanah.co.za": {
+    "domain": "elkanah.co.za",
+    "business_name": "Elkanah House",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "ats",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Elkanah House utilizes an external ATS portal (Simplify.hr) via ADvTECH for managing job vacancies, though no specific active roles are currently listed in the provided text.",
+    "sources": [
+      "Institution Homepage"
+    ],
+    "extractor": "gemini-flash-lite-latest",
+    "enriched_at": "2026-11-16T21:52:44.749075+00:00",
+    "hiring_intent_score": 10,
+    "hiring_tier": "Evergreen"
+  },
+  "brainline.com": {
+    "domain": "brainline.com",
+    "business_name": "Brainline",
+    "careers_url": "https://www.brainline.com/vacancies-2/vacancies",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "school_portal",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [
+      "STEM / Digital Growth"
+    ],
+    "leadership_signals": [],
+    "signal_summary": "Careers portal active at https://www.brainline.com/vacancies-2/vacancies; monitor for termly openings.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T21:52:47.522825+00:00",
+    "hiring_intent_score": 25,
+    "hiring_tier": "Evergreen"
+  },
+  "stmartin.co.za": {
+    "domain": "stmartin.co.za",
+    "business_name": "St Martin's School",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "No public vacancies page detected via automated crawl for stmartin.co.za; speculative direct outreach recommended.",
+    "sources": [
+      "Institution Homepage"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T21:52:52.630561+00:00",
+    "hiring_intent_score": 10,
+    "hiring_tier": "Evergreen"
+  },
+  "issa.co.za": {
+    "domain": "issa.co.za",
+    "business_name": "International School of South Africa",
+    "careers_url": "https://www.issa.co.za/careers/",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "The International School of South Africa maintains a careers page on its website, but no active job vacancies or recruitment emails are currently listed in the crawled text.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "gemini-flash-lite-latest",
+    "enriched_at": "2026-11-16T21:52:53.752409+00:00",
+    "hiring_intent_score": 15,
+    "hiring_tier": "Evergreen"
+  },
+  "sbs-ed.com": {
+    "domain": "sbs-ed.com",
+    "business_name": "Stellenbosch Business School Executive Development",
+    "careers_url": "https://exec.stellenboschbusiness.ac.za/join-our-team/",
+    "open_roles": [
+      {
+        "title": "Part-time Faculty",
+        "department_or_phase": "Executive Development",
+        "contract_type": "Part-time",
+        "closing_date": "",
+        "apply_url": "https://exec.stellenboschbusiness.ac.za/join-our-team/",
+        "source": "https://exec.stellenboschbusiness.ac.za/join-our-team/"
+      }
+    ],
+    "open_roles_count": 1,
+    "application_channel": "direct_email",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [
+      "Growth in demand for executive development programmes",
+      "Expanding pool of subject matter experts and faculty"
+    ],
+    "leadership_signals": [],
+    "signal_summary": "Stellenbosch Business School Executive Development is currently expanding its pool of part-time faculty and subject matter experts due to growing demand for its executive programmes. Applications can be submitted via email to Michelle Meyer.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "gemini-flash-lite-latest",
+    "enriched_at": "2026-11-16T21:52:58.397662+00:00",
+    "hiring_intent_score": 70,
+    "hiring_tier": "Hot Hiring"
+  },
+  "techways.online": {
+    "domain": "techways.online",
+    "business_name": "TechWays.Online",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "No public vacancies page detected via automated crawl for techways.online; speculative direct outreach recommended.",
+    "sources": [
+      "Domain Lookup"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T21:52:58.893569+00:00",
+    "hiring_intent_score": 10,
+    "hiring_tier": "Evergreen"
+  },
+  "treverton.co.za": {
+    "domain": "treverton.co.za",
+    "business_name": "Treverton Preparatory & College",
+    "careers_url": "https://treverton.co.za/our-vacancies/",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Treverton Preparatory & College currently lists no active vacancies on its careers page, stating that there are no openings at present.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "gemini-flash-lite-latest",
+    "enriched_at": "2026-11-16T21:52:59.740985+00:00",
+    "hiring_intent_score": 15,
+    "hiring_tier": "Evergreen"
+  },
+  "agricolleges.com": {
+    "domain": "agricolleges.com",
+    "business_name": "AGRICOLLEGES international",
+    "careers_url": "https://agricolleges.com/vacancies/",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "school_portal",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Careers portal active at https://agricolleges.com/vacancies/; monitor for termly openings.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T21:53:02.987953+00:00",
+    "hiring_intent_score": 15,
+    "hiring_tier": "Evergreen"
+  },
+  "swgc.co.za": {
+    "domain": "swgc.co.za",
+    "business_name": "South West Gauteng TVET College",
+    "careers_url": "https://www.swgc.co.za/vacancies/",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "direct_email",
+    "public_recruitment_email": "headoffice@swgc.co.za",
+    "urgency_flags": [],
+    "expansion_signals": [
+      "Official Launch of the Fourth Industrial Revolution and Driving Simulator Centres"
+    ],
+    "leadership_signals": [
+      "Mr. J. Monyamane Principal/CEO"
+    ],
+    "signal_summary": "South West Gauteng TVET College currently lists no active vacancies on its careers page. The institution recently launched Fourth Industrial Revolution and Driving Simulator Centres.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "gemini-flash-lite-latest",
+    "enriched_at": "2026-11-16T21:53:04.201265+00:00",
+    "hiring_intent_score": 25,
+    "hiring_tier": "Evergreen"
+  },
+  "complianceonline.co.za": {
+    "domain": "complianceonline.co.za",
+    "business_name": "Compliance Online",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "No public vacancies page detected via automated crawl for complianceonline.co.za; speculative direct outreach recommended.",
+    "sources": [
+      "Domain Lookup"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T21:53:04.591606+00:00",
+    "hiring_intent_score": 10,
+    "hiring_tier": "Evergreen"
+  },
+  "beeline.life": {
+    "domain": "beeline.life",
+    "business_name": "Beeline",
+    "careers_url": "https://www.beeline.life/careers",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "school_portal",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Careers portal active at https://www.beeline.life/careers; monitor for termly openings.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T21:53:06.504392+00:00",
+    "hiring_intent_score": 15,
+    "hiring_tier": "Evergreen"
+  },
+  "mustek.co.za": {
+    "domain": "mustek.co.za",
+    "business_name": "Mustek Limited",
+    "careers_url": "https://mustek.co.za/careers/",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "school_portal",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Careers portal active at https://mustek.co.za/careers/; monitor for termly openings.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T21:53:07.743583+00:00",
+    "hiring_intent_score": 15,
+    "hiring_tier": "Evergreen"
+  },
+  "comprsa.com": {
+    "domain": "comprsa.com",
+    "business_name": "COMPRSA",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [
+      "STEM / Digital Growth"
+    ],
+    "leadership_signals": [],
+    "signal_summary": "No public vacancies page detected via automated crawl for comprsa.com; speculative direct outreach recommended.",
+    "sources": [
+      "Institution Homepage"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T21:53:08.224058+00:00",
+    "hiring_intent_score": 20,
+    "hiring_tier": "Evergreen"
+  },
+  "ebs.co.za": {
+    "domain": "ebs.co.za",
+    "business_name": "EBSdotCOZA (Pty) Ltd",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "No public vacancies page detected via automated crawl for ebs.co.za; speculative direct outreach recommended.",
+    "sources": [
+      "Institution Homepage"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T21:53:08.343083+00:00",
+    "hiring_intent_score": 10,
+    "hiring_tier": "Evergreen"
+  },
+  "digemy.com": {
+    "domain": "digemy.com",
+    "business_name": "Digemy.com",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "No public vacancies page detected via automated crawl for digemy.com; speculative direct outreach recommended.",
+    "sources": [
+      "Institution Homepage"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T21:53:08.555289+00:00",
+    "hiring_intent_score": 10,
+    "hiring_tier": "Evergreen"
+  },
+  "centennialschools.co.za": {
+    "domain": "centennialschools.co.za",
+    "business_name": "Centennial Schools",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "No public vacancies page detected via automated crawl for centennialschools.co.za; speculative direct outreach recommended.",
+    "sources": [
+      "Institution Homepage"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T21:53:11.032469+00:00",
+    "hiring_intent_score": 10,
+    "hiring_tier": "Evergreen"
+  },
+  "zimeletechnologies.com": {
+    "domain": "zimeletechnologies.com",
+    "business_name": "Zimele Technologies",
+    "careers_url": "https://www.zimeletechnologies.com/join-zimele/careers",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "direct_email",
+    "public_recruitment_email": "recruitment@zimeletechnologies.com",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Careers portal active at https://www.zimeletechnologies.com/join-zimele/careers; monitor for termly openings.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T21:53:11.371308+00:00",
+    "hiring_intent_score": 15,
+    "hiring_tier": "Evergreen"
+  },
+  "edufearn.co.za": {
+    "domain": "edufearn.co.za",
+    "business_name": "EduFeArn (Pty) Ltd",
+    "careers_url": "https://www.edufern.co.za/careers1",
+    "open_roles": [
+      {
+        "title": "It Teacher",
+        "department_or_phase": "",
+        "contract_type": "Unspecified",
+        "closing_date": "",
+        "apply_url": "https://www.edufern.co.za/careers1",
+        "source": "School Website"
+      }
+    ],
+    "open_roles_count": 1,
+    "application_channel": "school_portal",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Discovered 1 potential role signal(s) on edufearn.co.za.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T21:53:11.374814+00:00",
+    "hiring_intent_score": 60,
+    "hiring_tier": "Warm Growth"
+  },
+  "edgeeducation.com": {
+    "domain": "edgeeducation.com",
+    "business_name": "EDGE Education",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [
+      "Programme Accelerator service for institutional growth"
+    ],
+    "leadership_signals": [],
+    "signal_summary": "EDGE Education is currently focused on providing academic content and programme development services to higher education institutions; no active job vacancies were identified in the provided text.",
+    "sources": [
+      "Institution Homepage"
+    ],
+    "extractor": "gemini-3-flash-preview",
+    "enriched_at": "2026-11-16T21:53:16.513266+00:00",
+    "hiring_intent_score": 20,
+    "hiring_tier": "Evergreen"
+  },
+  "geeks4learning.com": {
+    "domain": "geeks4learning.com",
+    "business_name": "Geeks4Learning",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "No public vacancies page detected via automated crawl for geeks4learning.com; speculative direct outreach recommended.",
+    "sources": [
+      "Institution Homepage"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T21:53:19.250580+00:00",
+    "hiring_intent_score": 10,
+    "hiring_tier": "Evergreen"
+  },
+  "navistudios.co.za": {
+    "domain": "navistudios.co.za",
+    "business_name": "Navi Studios",
+    "careers_url": "https://www.navistudios.co.za/vacancies",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "school_portal",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Careers portal active at https://www.navistudios.co.za/vacancies; monitor for termly openings.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T21:53:19.460494+00:00",
+    "hiring_intent_score": 15,
+    "hiring_tier": "Evergreen"
+  },
+  "ixperience.co": {
+    "domain": "ixperience.co",
+    "business_name": "iXperience",
+    "careers_url": "https://www.ixperience.co/careers",
+    "open_roles": [
+      {
+        "title": "Business Development Manager",
+        "department_or_phase": "Sales / Business Development",
+        "contract_type": "Full-time",
+        "closing_date": "None",
+        "apply_url": "https://www.ixperience.co/careers",
+        "source": "ixperience.co/careers"
+      },
+      {
+        "title": "Sales / Admissions Manager",
+        "department_or_phase": "Sales / Admissions",
+        "contract_type": "Full-time",
+        "closing_date": "None",
+        "apply_url": "https://www.ixperience.co/careers",
+        "source": "ixperience.co/careers"
+      },
+      {
+        "title": "Teach with iX",
+        "department_or_phase": "Academic",
+        "contract_type": "None",
+        "closing_date": "None",
+        "apply_url": "https://www.ixperience.co/careers",
+        "source": "ixperience.co/careers"
+      }
+    ],
+    "open_roles_count": 3,
+    "application_channel": "school_portal",
+    "public_recruitment_email": "",
+    "urgency_flags": [
+      "US Hours",
+      "Frequent International Travel"
+    ],
+    "expansion_signals": [
+      "Global Programs (Cape Town, NY, Lisbon)"
+    ],
+    "leadership_signals": [],
+    "signal_summary": "iXperience is currently recruiting for full-time sales and business development management roles based in Cape Town to support its global study abroad programs. The institution also maintains an ongoing recruitment drive for industry experts to join their teaching network.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "gemini-3-flash-preview",
+    "enriched_at": "2026-11-16T21:53:22.339178+00:00",
+    "hiring_intent_score": 100,
+    "hiring_tier": "Hot Hiring"
+  },
+  "fuelonline.co.za": {
+    "domain": "fuelonline.co.za",
+    "business_name": "FUEL | South Africa",
+    "careers_url": "https://fuelonline.co.za/careers/",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [
+      "3-year contract renewal with Toyota South Africa",
+      "Operating in 30 African countries"
+    ],
+    "leadership_signals": [],
+    "signal_summary": "FUEL currently has no active job vacancies listed on their careers portal. The company continues to demonstrate growth through long-term contract renewals with major clients like Toyota South Africa and maintains operations across 30 African countries.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "gemini-3-flash-preview",
+    "enriched_at": "2026-11-16T21:53:23.952776+00:00",
+    "hiring_intent_score": 25,
+    "hiring_tier": "Evergreen"
+  },
+  "sq72.co": {
+    "domain": "sq72.co",
+    "business_name": "SQ72",
+    "careers_url": "https://sq72.co/vacancies",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "school_portal",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Careers portal active at https://sq72.co/vacancies; monitor for termly openings.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T21:53:24.999542+00:00",
+    "hiring_intent_score": 15,
+    "hiring_tier": "Evergreen"
+  },
+  "tmteaching.co.za": {
+    "domain": "tmteaching.co.za",
+    "business_name": "Thuma Mina Teaching",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [
+      "More grades & subjects coming soon",
+      "2025 Mastercard Foundation EdTech Fellowship"
+    ],
+    "leadership_signals": [],
+    "signal_summary": "Thuma Mina Teaching is an EdTech non-profit currently expanding its curriculum coverage beyond Grade 7-9 EMS, History, Geography, and Natural Science. While no active job vacancies are listed, the organization is scaling operations as a 2025 Mastercard Foundation EdTech Fellow.",
+    "sources": [
+      "Institution Homepage"
+    ],
+    "extractor": "gemini-3-flash-preview",
+    "enriched_at": "2026-11-16T21:53:28.606170+00:00",
+    "hiring_intent_score": 20,
+    "hiring_tier": "Evergreen"
+  },
+  "nil.co.za": {
+    "domain": "nil.co.za",
+    "business_name": "NIL Africa",
+    "careers_url": "https://nil.co.za/specialised-recruitment/",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "NIL Africa offers specialised IT recruitment and training services but currently lists no active job vacancies on its crawled pages.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "gemini-flash-lite-latest",
+    "enriched_at": "2026-11-16T21:53:31.747487+00:00",
+    "hiring_intent_score": 15,
+    "hiring_tier": "Evergreen"
+  },
+  "matogen.com": {
+    "domain": "matogen.com",
+    "business_name": "Matogen Corporate Web and AI Powered Software Development",
+    "careers_url": "https://matogen.com/careers/",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "direct_email",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [
+      "New AI division expansion with Cogitait and Carys platform"
+    ],
+    "leadership_signals": [],
+    "signal_summary": "Matogen currently lists general channels for job and internship applications rather than specific active job titles, while highlighting recent expansion into enterprise AI solutions.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "gemini-flash-lite-latest",
+    "enriched_at": "2026-11-16T21:53:35.213068+00:00",
+    "hiring_intent_score": 25,
+    "hiring_tier": "Evergreen"
+  },
+  "worksheetcloud.com": {
+    "domain": "worksheetcloud.com",
+    "business_name": "WorksheetCloud.com",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "WorksheetCloud is an EdTech platform providing CAPS and IEB aligned study material for South African students from Grades 1 to 12. The crawled homepage content contains no active job vacancies or recruitment signals.",
+    "sources": [
+      "Institution Homepage"
+    ],
+    "extractor": "gemini-flash-lite-latest",
+    "enriched_at": "2026-11-16T21:53:53.142324+00:00",
+    "hiring_intent_score": 10,
+    "hiring_tier": "Evergreen"
+  },
+  "mytopdog.co.za": {
+    "domain": "mytopdog.co.za",
+    "business_name": "Top Dog Education",
+    "careers_url": "https://www.mytopdog.co.za/careers",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Top Dog Education currently lists no active job vacancies or recruitment signals on its careers page.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "gemini-flash-lite-latest",
+    "enriched_at": "2026-11-16T21:53:58.524510+00:00",
+    "hiring_intent_score": 15,
+    "hiring_tier": "Evergreen"
+  },
+  "skillsacademy.co.za": {
+    "domain": "skillsacademy.co.za",
+    "business_name": "Skills Academy",
+    "careers_url": "https://www.skillsacademy.co.za/vacancies/",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "school_portal",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "Careers portal active at https://www.skillsacademy.co.za/vacancies/; monitor for termly openings.",
+    "sources": [
+      "Institution Homepage",
+      "Careers / Vacancies Page"
+    ],
+    "extractor": "deterministic",
+    "enriched_at": "2026-11-16T22:26:20.816407+00:00",
+    "hiring_intent_score": 15,
+    "hiring_tier": "Evergreen"
+  },
+  "speccon.co.za": {
+    "domain": "speccon.co.za",
+    "business_name": "SpecCon Holdings (Pty) Ltd.",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "direct_email",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [
+      "Operates from 6 offices across South Africa",
+      "Grown from 1 employee to over 150 employees"
+    ],
+    "leadership_signals": [],
+    "signal_summary": "SpecCon Holdings currently lists no active job vacancies in the crawled text, though the company has experienced substantial growth to over 150 employees across 6 offices in South Africa.",
+    "sources": [
+      "Institution Homepage"
+    ],
+    "extractor": "gemini-flash-lite-latest",
+    "enriched_at": "2026-11-16T22:26:26.412434+00:00",
+    "hiring_intent_score": 20,
+    "hiring_tier": "Evergreen"
+  },
+  "ideaonline.com": {
+    "domain": "ideaonline.com",
+    "business_name": "IDEA",
+    "careers_url": "",
+    "open_roles": [],
+    "open_roles_count": 0,
+    "application_channel": "unknown",
+    "public_recruitment_email": "",
+    "urgency_flags": [],
+    "expansion_signals": [],
+    "leadership_signals": [],
+    "signal_summary": "IDEA provides digital education products, content, and professional development for schools and teachers, but the crawled text contains no active job vacancies, recruitment emails, or expansion announcements.",
+    "sources": [
+      "Institution Homepage"
+    ],
+    "extractor": "gemini-flash-lite-latest",
+    "enriched_at": "2026-11-16T22:26:38.545780+00:00",
+    "hiring_intent_score": 10,
+    "hiring_tier": "Evergreen"
+  }
+}

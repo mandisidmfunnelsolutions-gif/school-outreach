@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index.py" },
+    { "source": "/leads.json", "destination": "/api/index.py" },
+    { "source": "/leads.csv", "destination": "/api/index.py" }
+  ]
+}
